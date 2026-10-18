@@ -11,10 +11,11 @@
 /* Layout: centered column — bold title, thin full-width progress bar, black rounded clock box, two wide buttons, small settings rows below */
 :root {
   --bg: #FFFFFF; --ink: #212529; --muted: #6C757D; --line: #DEE2E6; --chip: #CED4DA; --soft: #F1F3F5;
-  --bar: #2F5D57; --box: #000000; --box-line: transparent; --box-hover: #1C1C1C; --digit: #FFFFFF; --arrow: #7A7A7A;
-  --go: #157347; --go-hover: #0F5C38; --go-ring: #9FD8B8;
+  --bar: #FF7A1A; --box: #000000; --box-line: transparent; --box-hover: #1C1C1C; --digit: #FFFFFF; --arrow: #7A7A7A;
+  --go: #FF7A1A; --go-hover: #F06400; --go-ring: #FFC79A;
+  --alt: #343A40; --alt-hover: #212529; --alt-fg: #FFFFFF;
   --stop: #6C757D; --stop-hover: #5C636A;
-  --danger: #DC3545; --warn: #FD7E14;
+  --danger: #DC3545; --warn: #FFC107;
   --f-ui: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
   --f-num: "Roboto", "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
@@ -22,15 +23,17 @@
 /* 深灰底 */
 :root[data-skin="gray"] {
   --bg: #2B2D31; --ink: #F1F3F5; --muted: #A3A8AF; --line: #42454B; --chip: #565A61; --soft: #36393F;
-  --bar: #6FBF9A; --box: #18191C; --box-line: transparent; --box-hover: #26282C; --arrow: #8A8F96;
+  --bar: #FF8A33; --box: #18191C; --box-line: transparent; --box-hover: #26282C; --arrow: #8A8F96;
   --stop: #5A5F66; --stop-hover: #6A7078;
+  --alt: #DEE2E6; --alt-hover: #F1F3F5; --alt-fg: #212529;
   color-scheme: dark;
 }
 /* 黑底 */
 :root[data-skin="black"] {
   --bg: #000000; --ink: #F5F5F5; --muted: #9A9A9A; --line: #262626; --chip: #3A3A3A; --soft: #151515;
-  --bar: #5FB88F; --box: #0E0E0E; --box-line: #2A2A2A; --box-hover: #1E1E1E; --arrow: #777777;
+  --bar: #FF8A33; --box: #0E0E0E; --box-line: #2A2A2A; --box-hover: #1E1E1E; --arrow: #777777;
   --stop: #3F4246; --stop-hover: #4C5055;
+  --alt: #DEE2E6; --alt-hover: #F8F9FA; --alt-fg: #111111;
   color-scheme: dark;
 }
 html, body { height: 100%; }
@@ -106,10 +109,9 @@ body.fs .btn { flex-basis: 260px; font-size: 20px; padding: 18px; }
 .btn.go:hover { background: var(--go-hover); }
 .btn.stop { background: var(--stop); }
 .btn.stop:hover { background: var(--stop-hover); }
-.btn.alt { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--chip); display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
-.btn.alt:hover { background: var(--soft); }
+.btn.alt { background: var(--alt); color: var(--alt-fg); display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn.alt:hover { background: var(--alt-hover); }
 .btn.alt svg { width: 16px; height: 16px; flex: none; }
-.btn.alt:focus-visible { box-shadow: inset 0 0 0 1px var(--chip), 0 0 0 4px var(--go-ring); }
 .btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--go-ring); }
 
 .status { margin-top: 12px; min-height: 1.4em; font-size: 15px; color: var(--muted); }
